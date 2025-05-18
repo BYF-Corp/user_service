@@ -11,9 +11,14 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # หรือชื่ออื่นตามที่ต้องการ
 
 
 # Quick-start development settings - unsuitable for production
@@ -25,8 +30,8 @@ SECRET_KEY = 'django-insecure-q)d@zxjo28)dtwn9f_^xge^t*14)aoj!(sp^fzybd)dg&nd@$z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['user-service-djgo.onrender.com' ,'b005-2001-44c8-4900-20ce-2537-fe43-3be4-32d5.ngrok-free.app', 'localhost', '127.0.0.1']
 
 # Application definition
 
@@ -49,7 +54,7 @@ REST_FRAMEWORK = {
     )
 }
 
-# CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://172.26.224.1:3000",
